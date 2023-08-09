@@ -1,0 +1,127 @@
+웹사이트 구동, 웹사이트의 디자인, 콘텐츠
+-> 프론트엔드
+HTML+CSS+JavaScript
++JQuery
+
+서버의 구동, 서버의 디자인, 콘텐츠
+-> 백엔드
+Java, Python -> Spring, Django
+
+HTML, CSS, JavaScript -> 프론트엔드의 기본
+HTML: HyperText Markup Language
+-> 웹사이트의 구조를 작성하는 언어
+CSS: Cascading Style Sheet
+-> 웹사이트의 디자인을 작성하는 언어
+JavaScript + JQuery
+-> 웹사이트의 동작을 작성하는 언어
+
+Version Control System: 버전(형상) 관리 도구
+- GitHub: 코드 관리, 코드의 버전 관리]
+
+Web Security Knowledge: 웹 보안 지식
+- HTTPS: 보안성이 있는 웹사이트
+https://naver.com
+http://naver.com
+ftp:// sftp:// db://
+- CORS: 웹사이트간 통신의 보안
+
+---
+JavaScript -> Node.js, React.js, Vue.js, Angular.js
+
+Package Managers: 확장 기능을 사용하기 위한 간편 프로그램
+
+Build Tools -> JavaScript Framework
+
+Modern CSS : CSS3의 추가된 문법, 확장 기능
+
+CSS Framework
+
+-----
+
+Java -> 백엔드에서 사용하는 언어
+: 안드로이드 폰, 단순한 컴퓨터 앱
+
+JavaScript -> 프론트엔드 + 백엔드에서 사용하는 언어
+: 웹 구동 언어
+
+-----
+
+github.com -> Sign up (회원가입)
+
+Repositories = 프로젝트 1개
+
+Repository Name: 프로젝트 이름
+Description: 프로젝트에 대한 간단한 설명
+
+Public: 이 레포지토리의 코드를 외부에 공개
+Private: 이 레포지토리의 코드를 나만 보겠다
+
+Add a README file: 이 레포지토리의 요약
+
+license: 저작권 (MIT License, Apache License)
+
+-----
+
+Visual Studio Code (VSCode)
+-> 확장 기능이 매우 많은 메모장
+vs
+Visual Studio
+-> 프로젝트 개발자를 위한 개발 도구
+
+VSCode와 GitHub를 연동시키기 위해서 설치 
+git-scm.com -> Download
+
+VSCode Extensions 메뉴 설치
+- Live Server (Five Server)
+- GitHub Pull Requests and Issues
+- GitHub Codespaces
+- GitHub Repositories
+
+- Korean Language Pack for Visual Studio
+-> VSCode를 한국어로 변경
+
+- Prettier - Code formatter
+-> 코드를 깔끔하게 보이도록 설정
+-> 왼쪽아래 설정 -> Setting -> "formatter" 검색 -> Editor: Default Formatter 메뉴에서 null 로 되있는 것을 "Prettier - Code formatter"로 변경
+-> "editor format" 검색 -> Editor: Format On Save -> 체크 ON
+-> "tab width" 검색 -> Prettier: Tab Width -> 환경에 따라서 (2~4)로 변경
+
+- Material Theme, Material Icon Theme
+-> 테마를 바꿔주는 확장기능
+-> Extensions 메뉴 -> Material Theme 검색 -> Set Color Theme 버튼 클릭 -> 원하는 테마 설정
+
+- Auto Rename Tag
+-> HTML 태그의 오타나 짝을 자동으로 맞춰주는 플러그인
+
+- Rainbow Brackets
+-> JavaScript 코드를 작성할 때 {}나 () 괄호를 사용하는데 괄호의 쌍을 쉽게 색깔로 표시
+
+- Indent Rainbow
+-> 코드 간 위계를 구분할 때 탭/띄어쓰기로 구분
+
+- Colorize
+-> HTML, CSS 코드에서 색상 미리보기
+
+------------------
+
+VSCode Explorer 메뉴 -> Open Repository -> GitHub 로그인 -> 다시 Open Repository -> 레포지토리 선택
+
+-----------------
+
+U - Untracked (추적되지 않는 파일)
+M - Modify (수정된 파일)
+D - Delete (삭제된 파일)
+A - Add (추가된 파일)
+
+---------------
+
+html 파일은 항상 <!DOCTYPE html> 로 시작
+html 태그: 이 코드는 html 코드이다
+- head, body 태그가 반드시 포함
+
+head 태그: 사이트에 대한 각종 정보, 스크립트(JavaScript), 스타일(CSS), 아이콘, 사이트 제목 등
+body 태그: 실제 사용자가 보는 부분
+
+meta 태그 : 사이트에 대한 정보
+charset="UTF-8" : 한글이 깨지지 않도록 해주는 코드
+title 태그: 사이트의 제목 설정
