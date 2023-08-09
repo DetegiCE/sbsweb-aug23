@@ -109,6 +109,13 @@ VSCode Explorer 메뉴 -> Open Repository -> GitHub 로그인 -> 다시 Open Rep
 
 VSCode Source Control 메뉴 -> Clone Repository -> GitHub Repository 주소 복사 붙여넣기 -> 클론 할 폴더 선택 -> Open
 
+---------------
+
+코드 창에 COMMIT_MESSAGE 라는 파일이 하나 열려있음 -> 닫기
+Source Control 메뉴를 보면 Changes에 +가 덜 된 파일 -> + 누르기
+Message 작성 후 Commit -> Sync Changes 
+
+
 ----------------
 
 github config 설정 
