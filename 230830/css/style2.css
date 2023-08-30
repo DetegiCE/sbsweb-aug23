@@ -1,0 +1,161 @@
+@charset "utf-8";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  width: 150px;
+  height: 150px;
+  margin: 20px;
+  border: 1px solid black;
+}
+
+#grad1 {
+  background: linear-gradient(to right bottom, blue, white);
+}
+
+#grad2 {
+  background: linear-gradient(240deg, red, white);
+}
+
+#grad3 {
+  background: linear-gradient(to right bottom, blue, cornflowerblue 20%, white);
+}
+
+#grad4 {
+  background: radial-gradient(white, orange, red);
+}
+
+#grad5 {
+  width: 200px;
+  height: 100px;
+  background: radial-gradient(white, orange, red);
+}
+
+#grad6 {
+  width: 200px;
+  height: 100px;
+  background: radial-gradient(circle, white, orange, red);
+}
+
+#grad7 {
+  background: radial-gradient(at 20% 20%, white, orange, red);
+}
+
+#grad8 {
+  width: 200px;
+  height: 100px;
+  background: radial-gradient(circle at 20% 20%, white, orange, red);
+}
+
+#grad9 {
+  background: radial-gradient(closest-corner at 20% 20%, white, skyblue, blue);
+}
+
+#grad10 {
+  background: radial-gradient(farthest-side at 20% 20%, white, skyblue, blue);
+}
+
+#grad11 {
+  background: repeating-linear-gradient(white, blue 50px);
+}
+
+#grad12 {
+  background: repeating-radial-gradient(yellow, orange 20%);
+}
+
+#grad13 {
+  width: 200px;
+  height: 100px;
+  background: repeating-radial-gradient(farthest-side circle at 30% 20%, yellow, orange 20%);
+}
+
+#grad14 {
+  background: repeating-linear-gradient(to right, yellow, yellow 25px, red 25px, red 50px);
+}
+
+#grad15 {
+  background: repeating-radial-gradient(white, white 10%, gray 10%, gray 30%);
+}
+
+#france {
+  width: 300px;
+  height: 200px;
+  border: 1px solid black;
+  background: repeating-linear-gradient(to right, #051440, #051440 100px, white 100px, white 200px, #ec1920 200px, #ec1920 300px);
+}
+
+#bang {
+  width: 250px;
+  height: 150px;
+  border: 1px solid black;
+  background: repeating-radial-gradient(circle at 40% 50%, #f42a41, #f42a41 30%, #006a4e 30%, #006a4e 100%);
+}
+
+#usa1 {
+  width: 152px;
+  height: 107.66px;
+  border: none;
+  background-color: #002664;
+  position: relative;
+  top: -200px;
+  margin-top: -21px;
+}
+
+#usa1 > p {
+  color: white;
+  text-align: center;
+  font-size: 15px;
+  line-height: 11px;
+  letter-spacing: 8px;
+}
+
+#usa2 {
+  width: 380px;
+  height: 200px;
+  background: repeating-linear-gradient(to bottom, #bf0a30, #bf0a30 15.38px, white 15.38px, white 30.76px);
+}
+
+#usa3 {
+  width: 152px;
+  height: 200px;
+  margin-right: 0;
+  float: left;
+  border: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    #002664,
+    #002664 107.66px,
+    white 107.66px,
+    white 123.04px,
+    #bf0a30 123.04px,
+    #bf0a30 138.42px,
+    white 138.42px,
+    white 153.8px,
+    #bf0a30 153.8px,
+    #bf0a30 169.18px,
+    white 169.18px,
+    white 184.56px,
+    #bf0a30 184.56px,
+    #bf0a30 200px
+  );
+}
+
+#usa3 > p {
+  color: white;
+  text-align: center;
+  font-size: 15px;
+  line-height: 11px;
+  letter-spacing: 8px;
+}
+
+#usa4 {
+  width: 228px;
+  height: 200px;
+  margin-left: 0;
+  float: left;
+  border: none;
+  background: repeating-linear-gradient(to bottom, #bf0a30, #bf0a30 15.38px, white 15.38px, white 30.76px);
+}
