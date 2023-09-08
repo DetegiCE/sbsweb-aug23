@@ -1,0 +1,59 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --color1: rgb(100, 200, 255);
+    --color2: green;
+}
+
+div {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    margin: 30px;
+}
+
+#box1 {
+    background-color: var(--color1);
+}
+
+#box2 {
+    background-color: var(--color1);
+}
+
+#box3 {
+    background-color: var(--color2, yellow);
+}
+
+#box4 {
+    background-color: var(--color3, var(--color2, var(--color1)));
+}
+
+#box5 {
+    background-color: var(--color5);
+}
+
+#box6 {
+    background-color: var(--color5);
+}
+
+#box7 {
+    --b-size: 250;
+    width: calc(var(--b-size) * 1px);
+    height: calc(var(--b-size) * 1px);
+}
+
+#imgbox1 {
+    --img: "zflip4.jpg";
+    /* background: url(calc("../img/" + var(--img))); */
+}
+
+#imgbox2 {
+    --img: url("../img/zflip4.jpg");
+    background: var(--img);
+    background-size: cover;
+}
