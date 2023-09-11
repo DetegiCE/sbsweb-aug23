@@ -1,0 +1,73 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+div {
+    margin: 30px;
+}
+
+#triangle1 {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid dodgerblue;
+}
+
+#triangle2 {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 100px solid dodgerblue;
+}
+
+#triangle3 {
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    border-left: 100px solid dodgerblue;
+}
+
+#triangle4 {
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    border-right: 100px solid dodgerblue;
+}
+
+#triangle5 {
+    width: 0;
+    height: 0;
+    border-top: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-left: 100px solid dodgerblue;
+    border-bottom: 100px solid dodgerblue;
+}
+
+#triangle6 {
+    width: 0;
+    height: 0;
+    border-right: 100px solid transparent;
+    border-bottom: 100px solid dodgerblue;
+}
+
+#trapezoid {
+    width: 100px;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid dodgerblue;
+}
+
+#parallelogram {
+    width: 150px;
+    height: 100px;
+    background-color: dodgerblue;
+    transform: skewX(20deg);
+}

@@ -35,9 +35,9 @@ body {
     
     top: 0px;
     left: calc((var(--bigradius) - var(--radius)) * 1px);
-    /*
-    animation:
-    */
+    
+    animation: circle 4s ease-in calc(4 / var(--count) * var(--p) * 1s) infinite;
+    
 }
 
 @keyframes circle {
