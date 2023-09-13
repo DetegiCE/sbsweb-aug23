@@ -1,0 +1,82 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+div {
+    margin: 100px;
+}
+
+#hexagram {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid dodgerblue;
+    position: relative;
+}
+
+#hexagram::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 100px solid dodgerblue;
+
+    position: absolute;
+    top: 30px;
+    left: -50px;
+}
+
+#hexagon {
+    width: 100px;
+    height: 57.735px;
+    background-color: dodgerblue;
+    position: relative;
+}
+
+#hexagon::before {
+    content: "";
+    width: 100px;
+    height: 57.735px;
+    background-color: dodgerblue;
+    transform: rotate(60deg);
+    
+    position: absolute;
+}
+
+#hexagon::after {
+    content: "";
+    width: 100px;
+    height: 57.735px;
+    background-color: dodgerblue;
+    transform: rotate(-60deg);
+    
+    position: absolute;
+}
+
+#pentagon {
+    width: 54px;
+    height: 0;
+    border-left: 18px solid transparent;
+    border-right: 18px solid transparent;
+    border-top: 50px solid dodgerblue;
+    position: relative;
+}
+
+#pentagon::before {
+    content: "";
+    width: 0;
+    height: 0;
+
+    border-left: 45px solid transparent;
+    border-right: 45px solid transparent;
+    border-bottom: 35px solid dodgerblue;
+
+    position: absolute;
+    top: -85px;
+    left: -18px;
+}

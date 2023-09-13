@@ -1,0 +1,36 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#wrap {
+    display: grid;
+}
+
+#wrap > div:nth-child(odd) {
+    background-color: green;
+}
+
+#wrap > div:nth-child(even) {
+    background-color: navy;
+}
+
+@media screen and (max-width: 768px) {
+    #wrap {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 960px) {
+    #wrap {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (min-width: 960px) {
+    #wrap {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
