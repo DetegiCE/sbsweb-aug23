@@ -1,0 +1,251 @@
+객체 Object
+
+변수: 값을 저장
+객체: 속성(변수) + 기능(함수, 메소드)을 함께
+
+자바스크립트: 객체 기반 스크립트 언어
+
+
+1. 내장 객체 (Built-in Object)
+- 자바스크리트 엔진에 포함되어있는 객체
+날짜, 배열, 수학, 문자열, ...
+
+2. 브라우저 객체 모델 (Browser Object Model: BOM)
+- 브라우저에 내장되어 있는 객체
+window(document), screen, location, history, navigator
+
+3. 문서 객체 모델 (Document Object Model: DOM)
+- HTML 문서 구조
+HTML 문서에 있는 태그, 클래스, 아이디, name값, 속성값 등등
+
+
+
+var, let, const
+
+일반적으로 변수 사용 할 때
+먼저 선언 -> 사용
+
+var: 선언->사용 X, 코드 내부에서 어디서든 선언을 하고 어디서든 사용 가능 (호이스팅) (편하긴한데 코드가 꼬일 수 있다), 재선언 O
+
+var a = 1;
+var a = 2; O
+
+let: 선언->사용 O, 재선언 X
+
+let a = 1;
+let a = 2; X
+
+const: 상수 지정->한 번 선언하면 바꿀 수 없다 (=재할당 불가능)
+
+
+
+
+내장 객체
+
+new 키워드: 기본 객체를 생성하게 해주는 키워드
+
+var 객체변수 = new Object(); // 선언
+객체변수.속성변수 = 속성변수값; // 생성
+객체변수.기능변수 = function() {
+    코드;
+};
+
+= 을 이용해서 값을 대입
+
+또는
+
+var 객체변수 = {
+    속성변수: 속성변수값,
+    기능변수: function() {
+        코드;
+    };
+};
+
+: 을 이용해서 값을 대입
+
+
+자바스크립트에서 함수 선언하기
+turnOn = function() { // 익명함수
+
+};
+
+function turnOn() { // 기명함수
+
+};
+
+turnOn();
+
+
+객체에서 내 객체에 속해있는 변수나 함수를 가져오기 위해서는 this 키워드를 사용 (파이썬에서의 self와 동일한 기능)
+
+
+
+
+날짜 객체 (Date)
+-> 날짜나 시간에 관련된 정보
+
+let 변수 = new Date();
+-> 현재 날짜/시간
+
+let 변수 = new Date("2023/11/17");
+-> 매개변수에 넣은 날짜 0시 0분 0초
+
+let 변수 = new Date(2023, 11, 17);
+-> 매개변수에 숫자로 넣으면 연, 일은 그대로 나옴
+그런데 월은 +1 되어서 나옴 (월이 0부터 시작됨)
+
+처음 생성할 때 new 객체이름(매개변수)
+-> 매개변수에 따라서 다른 값이 변수에 할당이 됨
+-> 생성자
+객체이름() -> 기본생성자
+객체이름(?) -> 생성자
+
+getFullYear(); -> 연
+getUTCFullYear(); -> 세계협정시 연
+getMonth(); -> 월 (-1)
+getDate(); -> 일
+getDay(); -> 요일 (일0, 월1, 화2, 수3, ...)
+getHours();
+getMinutes();
+getSeconds();
+getMilliseconds();
+getTime(); -> timestamp 값
+1970년 1월 1일 0시 0분 0초 (UTC기준)으로부터 현재까지 몇 밀리초가 흘렀는가
+
+toUTCString(); -> GMT 기준
+toLocaleString(); -> 현지 시간 표기법
+ko-KR: 한국, en-US: 미국, ja-JP: 일본 등
+
+
+날짜 수정하기
+setFullYear();
+setMonth(); : ** -1 **
+setDate();
+setHours();
+setMinutes();
+setSeconds();
+setMilliseconds();
+setTime();
+
+
+[yoil.html]
+연, 월, 일을 각각 prompt로 받아서
+입력받은 날짜가 무슨 요일인지 출력
+
+****년 *월 *일은 *요일입니다.
+
+-> 생성자로 날짜 만드는 방식 [yoil1.html]
+-> set 함수 이용해서 날짜 만드는 방식 [yoil2.html]
+
+
+
+[dday.html]
+연, 월, 일을 yyyy/mm/dd 형태로 입력받아서
+오늘 날짜로부터 입력받은 날짜까지 며칠 남았는지
+디데이 계산하는 사이트
+
+
+****년 *월 *일 (D-*)
+
+만약 오늘이면
+****년 *월 *일 (D-Day)
+
+
+오늘 날짜의 00:00:00
+입력 받은 날짜 00:00:00
+-> 둘의 timestamp를 비교
+
+
+
+수학 객체 (Math)
+Math.abs(숫자)
+-> absolute (절댓값)
+-5 => 5, 7 => 7, -3.14 -> 3.14
+
+Math.max(숫자 여러개)
+-> maximum (최댓값)
+
+Math.min(숫자 여러개)
+-> minimum (최솟값)
+
+Math.pow(밑 수, 지수)
+Math.pow(2, 3) = 2의 3제곱 = 8
+-> power (거듭제곱 값)
+
+Math.random()
+-> 0 이상 1 미만의 소수 랜덤 값
+
+Math.ceil(수)
+-> ceiling (천장함수, 올림함수)
+-> 소수를 올림한 값
+
+Math.floor(수)
+-> floor (바닥함수, 내림함수)
+-> 소수를 내림한 값
+
+Math.round(수)
+-> 소수를 반올림한 값
+
+Math.sqrt(수)
+-> square root (제곱근)
+
+Math.cbrt(수)
+-> cube root (세제곱근)
+
+Math.PI (원주율(3.14)를 나타내는 상수)
+
+
+Math.random() -> 0 이상 1 미만의 소수
+
+10 이상 100 이하의 정수가 나오게 하고 싶다
+-> 0 이상 90 이하 (0 이상 91 미만) + 10
+Math.random() * 91 -> 0 이상 91 미만의 소수
+Math.random()*91+10 -> 10 이상 101 미만의 소수
+Math.floor(") -> 10 이상 101 미만의 정수
+
+
+[rsp.html]
+사용자 입력 -> 가위, 바위, 보
+
+컴퓨터 입력은 1 이상 3 이하의 랜덤 값
+1 -> 가위
+2 -> 바위
+3 -> 보
+
+사용자: **
+컴퓨터: **
+당신이 이겼습니다 (파란색)
+당신이 졌습니다 (빨간색)
+비겼습니다 (초록색) 
+
+1 이상 3 이하
+-> 1 이상 4 미만
+-> (0 이상 3 미만) + 1
+Math.floor((Math.random()*3)+1)
+
+
+[progress.html]
+진척도를 prompt 로 숫자만 입력 (%)
+10.5, 70
+
+만약 입력받은 숫자가 100 초과하거나 0 미만이면
+alert를 이용해서 유효하지 않은 숫자임을 알림
+
+유효한 숫자라면 progress바를 띄워줌
+
+전체 너비를 300px로 해서 진척도만큼을 색칠
+높이 70px
+
+ex) 30%
+div 300px
+- div width: 90px
+- div width: 210px
+
+색상
+20% 이하 red
+40% 이하 orange
+60% 이하 green
+80% 이하 blue
+100% 이하 purple
+
+소수점 내림으로 가운데에 % 써주기 (흰색으로)
