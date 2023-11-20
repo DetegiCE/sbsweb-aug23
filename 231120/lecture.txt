@@ -1,0 +1,175 @@
+브라우저 객체 모델 (Browser Object Model: BOM)
+window (브라우저 창)
+- document
+- screen
+- location
+- history
+- navigator
+
+
+window 객체: 브라우저 창을 다루는 객체
+- open(url, 이름, 옵션)
+ 옵션
+  - width = 너비
+  - height = 높이
+  - left = 화면에서 왼쪽으로부터 얼마나 띄울건지
+  - top = 화면에서 위로부터 얼마나 띄울건지
+  - scrollbars = 스크롤바 여부 (yes, no)
+- alert(메시지): 경고창
+- prompt(질문, 디폴트답변): 질의창
+- confirm(질문): 확인/취소
+- setInterval: 일정 시간 간격으로 코드를 실행
+  -> setInterval을 멈추려면 clearInterval이 필요
+- setTimeout: 일정 시간 후에 코드를 실행
+
+let 변수 = setInterval(function() {
+    코드
+}, 시간간격(ms));
+
+clearInterval(변수);
+
+console.log(메시지): 콘솔 창에 로그를 남기는 함수
+
+window.outerWidth
+window.outerHeight
+-> html 외부의 윈도우 창의 UI까지 포함한 크기
+
+window.innerWidth
+window.innerHeight
+-> html만의 크기
+
+[count.html]
+setInterval과 별도의 변수를 이용해서 1부터 40까지 출력이 되는데 출력 간격은 1초, 출력 할 때 글씨의 크기가 숫자와 비례하도록 (1 -> 1px, 5 -> 5px, 20 -> 20px)
+
+
+screen 객체
+: 사용자의 모니터 정보를 가져오는 객체
+screen.width
+screen.height
+-> 내 모니터의 크기
+
+screen.availWidth
+screen.availHeight
+-> 작업표시줄을 제외한 내 모니터의 크기
+
+screen.colorDepth
+-> 모니터에서 표현할 수 있는 컬러 비트의 수
+screen.pixelDepth
+-> 모니터에서 표현할 수 있는 픽셀 당 비트의 수
+rgb -> (0~255) -> 256가지 = 2^8가지 x 3 -> 24비트
+
+
+location 객체
+: 사용자의 브라우저 정보와 관련된 객체
+
+location.href -> 사용자의 현재 위치의 URL을 통쨰로 가져오는 것
+~.hash -> url에서 # 뒤의 값
+~.hostname -> url에서 주소 값만
+~.host -> 주소 + 포트 번호 (주소 뒤에 : 뒤에 붙은 숫자)
+~.protocol -> // 앞의 값
+~.search -> ? 뒤의 값 (쿼리)
+
+location.reload() -> 새로고침
+
+
+history 객체
+: 사용자가 방문한 사이트 기록
+(이전 방문, 다음 방문으로도 이동 가능)
+
+history.back() -> 이전 방문 사이트로 이동
+~.forward() -> 다음 방문 사이트로 이동
+~.go(숫자) -> 숫자 단계 이전/다음으로 이동
+  .go(-2) -> 2단계 이전, .go(3) -> 3단계 이후
+~.length -> 방문 기록의 길이
+
+naver.com
+naver.com/login <= history.go(-2)
+naver.com/cafe <= history.back()
+naver.com/blog <= 현재 상태
+gmail.com      <= history.forward()
+sbsart.com
+sbsart.com/portfolio <= history.go(3)
+
+history.length -> 7
+
+
+*** navigator 객체 ***
+-> 현재 사이트 방문자의 브라우저 정보 + 운영체제 정보
+
+콘솔 창에서 navigator.userAgent를 쳐보면 현재 방문자(나)의 브라우저와 운영체제 정보를 확인할 수 있음
+
+User Agent: 사이트에 접속을 할 떄 기기나 브라우저 등의 사용자의 소프트웨어 정보를 담고 있는 것 (무조건 정해진 값 -> 사용자가 임의로 수정 X)
+
+Mozilla/버전 + 운영체제 + 내 엔진 + 브라우저
+
+PC크롬: 
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) < Mozilla, 운영체제
+AppleWebKit/537.36 (KHTML, like Gecko) < 내 엔진
+Chrome/119.0.0.0 
+Safari/537.36
+
+PC엣지:
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) 
+AppleWebKit/537.36 (KHTML, like Gecko) 
+Chrome/119.0.0.0 
+Safari/537.36 
+Edg/119.0.0.0
+
+Galaxy S20 Ultra 크롬:
+Mozilla/5.0 (Linux; Android 13; SM-G981B) 
+AppleWebKit/537.36 (KHTML, like Gecko) 
+Chrome/116.0.0.0 
+Mobile 
+Safari/537.36
+
+iPhone 14 Pro Max 크롬:
+Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) 
+AppleWebKit/605.1.15 (KHTML, like Gecko) 
+Version/16.6 
+Mobile/15E148 
+Safari/604.1
+
+-> 안드로이드 유저랑 아이폰 유저에게 보이는 창을 다르게 하고 싶다
+
+appCodeName: Mozilla (플랫폼 정보, 코드이름)
+appVersion: userAgent에서 appCodeName을 제외한 나머지 모든 부분
+appName: NetScape (거의 모든 웹의 표준격)
+product: Gecko
+language: 브라우저의 언어
+ -> ISO language code
+ ko-KR, ja-JP, en-US, en-GB, en-IE, zh-HK 등등...
+platform: 운영체제
+onLine: 현재 인터넷 연결 여부
+
+
+[oscheck.html]
+창 초기화
+document.body.innerHTML = "";
+
+navigator 객체와 screen 객체를 활용해서 현재 사용자의 디바이스 (윈도우, 맥, 아이폰, 안드로이드, 기타)와 창의 크기를 출력해주는 웹페이지
+(실시간으로 바뀌게 -> 1초마다 다시 작성)
+
+디바이스는 글씨가 아닌 사진으로 출력되게
+
+Date 객체랑 window 객체 활용해서 현재 시간을 초 단위로 표시 (1초마다 바뀌게)
+
+userAgent
+윈도우 -> Windows
+맥 -> Macintosh
+아이폰 -> iPhone
+아이패드 -> iPad
+안드로이드 -> Android
+기타 -> ? 
+
+
+[halfcolor.html]
+window 객체를 활용해서 화면의 세로 절반 크기만큼 색깔을 채우되, 그 색이 1초마다 랜덤하게 바뀌도록 사이트 (1초마다 창 초기화)
+
+width, height -> window 객체를 이용해서 설정
+background-color: rgb(랜덤, 랜덤, 랜덤)
+-> div 태그 1개만
+
+
+과제
+[country.html]
+navigator 객체를 이용해서 현재 브라우저의 언어가 한국어라면 한국 국기, 일본어라면 일본 국기, 영어(미국)이라면 미국 국기, 영어(영국)이라면 영국 국기, 기타면 물음표 사진이 나오도록 사이트
