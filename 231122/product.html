@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function ProductInfo(code, name, price) {
+            this.productCode = code;
+            this.productName = name;
+            this.productPrice = price;
+            this.productImage;
+
+            this.getInfo = function() {
+
+            };
+        }
+
+        let iphone = new ProductInfo("aaa001", "iPhone 15", 2000000);
+    </script>
+</head>
+<body>
+    <img src="" id="itemImage">
+    <p id="itemPrice"></p>
+    <button onclick="iphone.getInfo();">iPhone 15</button>
+</body>
+</html>

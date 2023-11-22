@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function StudentInfo(name, grade) {
+            this.studentName = name;
+            this.studentGrade = grade;
+            this.subjectCount;
+            this.subjectName = new Array();
+            this.subjectScore = new Array();
+
+            this.inputSubject = function() {
+                this.subjectCount = Number(prompt("과목 수를 입력하세요."));
+                for(let i=0 ; i<this.subjectCount ; i++) {
+                    let subject = prompt("과목을 입력하세요.");
+                    this.subjectName.push(subject);
+                }
+                document.body.innerHTML += "<button onclick='student.inputScore()'>성적입력</button>";
+            };
+
+            this.inputScore = function() {
+                for(let i=0 ; i<this.subjectCount ; i++) {
+                    let score = Number(prompt(this.subjectName[i] + " 과목의 성적을 입력하세요."));
+                    this.subjectScore.push(score);
+                }
+                document.body.innerHTML += "<button onclick='student.scoreAnalysis()'>성적분석</button><br>";
+            };
+
+            this.getAverage = function() {
+                let average = 0;
+                for(let i=0 ; i<this.subjectCount ; i++) {
+                    average += this.subjectScore[i];
+                }
+                average /= this.subjectCount;
+                return average;
+            }
+
+            this.scoreAnalysis = function() {
+                for(let i=0 ; i<this.subjectCount ; i++){
+                    document.body.innerHTML += "<p>"+this.subjectName[i]+" "+this.subjectScore[i]+"</p>"
+                }
+                document.body.innerHTML += "<p>평균 "+this.getAverage()+"</p>";
+            }
+        }
+
+        let name = prompt("이름을 입력하세요.");
+        let grade = Number(prompt("학년을 입력하세요."));
+        let student = new StudentInfo(name, grade);
+        document.write(student.studentName+" ("+student.studentGrade+")<br>");
+        document.write("<button onclick='student.inputSubject()'>과목입력</button>");
+
+        // let studentArray = new Array(new StudentInfo("홍길동", 3), new StudentInfo("박보검", 2));
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
